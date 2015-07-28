@@ -20,5 +20,14 @@ namespace HealthChecker
                     UriTemplate = "/GetHealth?domain={domain}"
                    )]
         string GetHealth(string domain);
+
+        [OperationContract]
+        [WebInvoke(
+                    Method = "GET",
+                    RequestFormat = WebMessageFormat.Json,
+                    ResponseFormat = WebMessageFormat.Json,
+                    UriTemplate = "/CheckEmailExistence?email={email}"
+                   )]
+        string CheckEmailExistence(string email);
     }
 }
